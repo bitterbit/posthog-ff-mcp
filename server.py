@@ -1,6 +1,6 @@
 # /// script
 # requires-python = ">=3.10"
-# dependencies = ["mcp>=1.2.0", "httpx>=0.27"]
+# dependencies = ["mcp==1.30.0", "httpx==0.28.1"]
 # ///
 """Read-only MCP server wrapping the PostHog REST API for feature flags.
 

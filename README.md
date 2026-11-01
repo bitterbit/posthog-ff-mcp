@@ -38,6 +38,12 @@ uv run server.py
 The first run resolves dependencies automatically; the server then speaks MCP over
 stdio.
 
+Dependencies are pinned exactly (`mcp==1.30.0`, `httpx==0.28.1`) and every
+transitive dependency is locked in `server.py.lock`, which `uv run server.py` uses, and in
+`uv.lock`. The pin stays on `mcp` 1.x on purpose: `mcp` 2.x renamed `FastMCP` to
+`MCPServer` and breaks this server. To upgrade, change the pins in both `server.py` and
+`pyproject.toml`, then run `uv lock --script server.py && uv lock`.
+
 ## Add to Claude Code
 
 ```bash
